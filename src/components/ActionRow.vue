@@ -60,6 +60,7 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+    list-style: none;
 
     .action-element {
       flex-basis: auto;
@@ -68,6 +69,7 @@ export default {
         display: flex;
         align-items: center;
         padding: $padding-y $padding-x;
+        text-decoration: none;
 
         img {
           max-width: 50px;
