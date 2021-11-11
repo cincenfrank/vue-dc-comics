@@ -1,6 +1,6 @@
 <template>
-  <footer>
-    <nav class="logo-bg">
+  <footer cla>
+    <nav class="logo-bg container">
       <ul class="footer-list">
         <li v-for="(item, i) in itemsList" :key="i" class="footer-list-item">
           <h3 class="nav-title">{{ item.groupName }}</h3>
@@ -10,21 +10,27 @@
               :key="`${i}-${k}`"
               class="nav-item"
             >
-              <a href="#">link</a>
+              <a href="#">{{ link.title }}</a>
             </li>
           </ul>
         </li>
       </ul>
     </nav>
-    <div class="action-row">
-      <a href="#" class="sign-up-button">SIGN-UP NOW!</a>
-      <div class="social-section">
-        <h3>FOLLOW US</h3>
-        <ul>
-          <li>
-            <a href="#"><img src="link" alt="link" /></a>
-          </li>
-        </ul>
+    <div class="action-block">
+      <div class="action-row container">
+        <a href="#" class="sign-up-button">SIGN-UP NOW!</a>
+        <div class="social-section">
+          <h3>FOLLOW US</h3>
+          <ul class="social-list">
+            <li v-for="(social, i) in socialList" :key="i">
+              <a :href="social.href"
+                ><img
+                  :src="require(`../assets/img/${social.image}`)"
+                  :alt="social.image"
+              /></a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </footer>
@@ -40,46 +46,73 @@ export default {
           groupName: "dc comics",
           itemsList: [
             { title: "characters", href: "#" },
-            { title: "characters", href: "#" },
-            { title: "characters", href: "#" },
-            { title: "characters", href: "#" },
-            { title: "characters", href: "#" },
-            { title: "characters", href: "#" },
-            { title: "characters", href: "#" },
+            { title: "comics", href: "#" },
+            { title: "movies", href: "#" },
+            { title: "tv", href: "#" },
+            { title: "games", href: "#" },
+            { title: "video", href: "#" },
+            { title: "news", href: "#" },
           ],
         },
         {
           groupName: "shop",
           itemsList: [
-            { title: "characters", href: "#" },
-            { title: "characters", href: "#" },
+            { title: "shop DC", href: "#" },
+            { title: "shop DC Collectibles", href: "#" },
           ],
         },
         {
           groupName: "dc",
           itemsList: [
-            { title: "characters", href: "#" },
-            { title: "characters", href: "#" },
-            { title: "characters", href: "#" },
-            { title: "characters", href: "#" },
-            { title: "characters", href: "#" },
-            { title: "characters", href: "#" },
-            { title: "characters", href: "#" },
-            { title: "characters", href: "#" },
-            { title: "characters", href: "#" },
-            { title: "characters", href: "#" },
-            { title: "characters", href: "#" },
+            { title: "term of use", href: "#" },
+            { title: "privacy policy (new)", href: "#" },
+            { title: "ad choices", href: "#" },
+            { title: "advertising", href: "#" },
+            { title: "jobs", href: "#" },
+            { title: "subscriptions", href: "#" },
+            { title: "talent workshop", href: "#" },
+            { title: "CPSC Certificates", href: "#" },
+            { title: "Rattings", href: "#" },
+            { title: "shop help", href: "#" },
+            { title: "contact us", href: "#" },
           ],
         },
         {
           groupName: "sites",
           itemsList: [
-            { title: "characters", href: "#" },
-            { title: "characters", href: "#" },
-            { title: "characters", href: "#" },
-            { title: "characters", href: "#" },
-            { title: "characters", href: "#" },
+            { title: "DC", href: "#" },
+            { title: "MAD magazine", href: "#" },
+            { title: "DC Kids", href: "#" },
+            { title: "DC Universe", href: "#" },
+            { title: "DC Power Visa", href: "#" },
           ],
+        },
+      ],
+      socialList: [
+        {
+          name: "facebook",
+          href: "#",
+          image: "footer-facebook.png",
+        },
+        {
+          name: "twitter",
+          href: "#",
+          image: "footer-twitter.png",
+        },
+        {
+          name: "youtube",
+          href: "#",
+          image: "footer-youtube.png",
+        },
+        {
+          name: "pinterest",
+          href: "#",
+          image: "footer-pinterest.png",
+        },
+        {
+          name: "periscope",
+          href: "#",
+          image: "footer-periscope.png",
         },
       ],
     };
@@ -100,7 +133,7 @@ footer {
     background-image: url("../assets/img/dc-logo-bg.png");
     background-repeat: no-repeat;
     background-position-x: right;
-    background-size: 700px;
+    background-size: 500px;
     background-position-y: center;
     text-align: left;
 
@@ -121,29 +154,42 @@ footer {
     }
     .nav-item {
       a {
-        color: grey;
+        color: $text-grey-color;
         text-transform: capitalize;
+        text-decoration: none;
       }
     }
   }
-  .action-row {
-    background-color: grey;
-    display: flex;
-    justify-content: space-between;
-    align-content: center;
-    padding: $padding-y * 3 $padding-x;
-
-    .sign-up-button {
-      color: white;
-      border: 2px solid blue;
-      text-decoration: none;
-      padding: $padding-y $padding-x;
-    }
-    .social-section {
+  .action-block {
+    background-color: $grey-bg-color;
+    .action-row {
       display: flex;
-      align-content: center;
-      h3 {
-        color: blue;
+      justify-content: space-between;
+      align-items: center;
+      padding: $padding-y * 2 $padding-x;
+
+      .sign-up-button {
+        color: white;
+        border: 2px solid $text-accent-color;
+        text-decoration: none;
+        padding: $padding-y $padding-x;
+        font-weight: bold;
+      }
+      .social-section {
+        display: flex;
+        align-content: center;
+        align-items: center;
+
+        h3 {
+          color: $text-accent-color;
+        }
+        .social-list {
+          list-style: none;
+          display: flex;
+          li {
+            padding: $padding-y $padding-x/2;
+          }
+        }
       }
     }
   }

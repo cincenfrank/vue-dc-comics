@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header class="container">
     <nav class="navbar">
       <img src="../assets/img/dc-logo.png" alt="logo" />
       <ul class="navbar-list">
@@ -9,7 +9,7 @@
           class="navbar-item"
           :class="activeIndex === i ? 'active' : ''"
         >
-          <a :href="item.href">{{ item.text }}</a>
+          <a :href="item.href" @click="activeIndex = i">{{ item.text }} </a>
         </li>
       </ul>
     </nav>
@@ -77,7 +77,10 @@ export default {
   justify-content: space-between;
   align-items: stretch;
   //   padding: 10px 0px;
-
+  img {
+    padding: 10px;
+    height: 80px;
+  }
   .navbar-list {
     list-style: none;
     display: flex;
@@ -100,6 +103,7 @@ export default {
         display: inline-block;
         text-decoration: none;
         padding: $padding-y $padding-x;
+        font-size: 14px;
         text-transform: uppercase;
         font-weight: bold;
         color: $text-primary-color;

@@ -1,6 +1,6 @@
 <template>
   <main>
-    <div class="main-block">Content Goes Here</div>
+    <div class="main-block container">Content Goes Here</div>
     <ActionRow></ActionRow>
   </main>
 </template>
@@ -15,12 +15,14 @@ export default {
 
 <style lang="scss" scoped>
 @import "../assets/styles/variables.scss";
-
+main {
+  background-color: black;
+}
 .main-block {
   font-weight: bold;
   font-size: 30px;
   color: white;
-  background-color: black;
+
   padding: $padding-y * 5 $padding-x;
   text-align: start;
 }

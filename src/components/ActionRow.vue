@@ -1,12 +1,17 @@
 <template>
-  <ul class="action-row">
-    <li class="action-element" v-for="(item, i) in itemsList" :key="i">
-      <a :href="item.href">
-        <img src="../assets/img/buy-comics-digital-comics.png" alt="" />
-        <h3>{{ item.text }}</h3></a
-      >
-    </li>
-  </ul>
+  <div class="action-row-block">
+    <ul class="action-row container">
+      <li class="action-element" v-for="(item, i) in itemsList" :key="i">
+        <a :href="item.href">
+          <img
+            :src="require(`../assets/img/${item.imageName}`)"
+            :alt="`${item.text} image`"
+          />
+          <h3>{{ item.text }}</h3></a
+        >
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>
@@ -16,27 +21,27 @@ export default {
     return {
       itemsList: [
         {
-          imageName: "../assets/img/buy-comics-digital-comics.png",
+          imageName: "buy-comics-digital-comics.png",
           text: "digital comics",
           href: "#",
         },
         {
-          imageName: "buy-comics-digital-comics.png",
+          imageName: "buy-comics-merchandise.png",
           text: "dc merchandise",
           href: "#",
         },
         {
-          imageName: "buy-comics-digital-comics.png",
+          imageName: "buy-comics-subscriptions.png",
           text: "subscription",
           href: "#",
         },
         {
-          imageName: "buy-comics-digital-comics.png",
+          imageName: "buy-comics-shop-locator.png",
           text: "comic shop locator",
           href: "#",
         },
         {
-          imageName: "buy-comics-digital-comics.png",
+          imageName: "buy-dc-power-visa.svg",
           text: "dc power visa",
           href: "#",
         },
@@ -48,26 +53,33 @@ export default {
 
 <style lang="scss" scoped>
 @import "../assets/styles/variables.scss";
+.action-row-block {
+  background-color: $text-accent-color;
+  .action-row {
+    padding: $padding-y * 5 $padding-x;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-.action-row {
-  background-color: blue;
-  padding: $padding-y * 5 $padding-x;
-  display: flex;
-  justify-content: center;
+    .action-element {
+      flex-basis: auto;
+      flex-shrink: 0;
+      a {
+        display: flex;
+        align-items: center;
+        padding: $padding-y $padding-x;
 
-  .action-element {
-    a {
-      display: flex;
-      align-items: center;
-      padding: $padding-y $padding-x;
-
-      img {
-        max-width: 50px;
-        margin-right: $padding-x;
-      }
-      h3 {
-        text-transform: uppercase;
-        color: white;
+        img {
+          max-width: 50px;
+          max-height: 50px;
+          margin-right: $padding-x;
+        }
+        h3 {
+          flex-shrink: 0;
+          text-transform: uppercase;
+          color: white;
+          font-size: 14px;
+        }
       }
     }
   }
