@@ -76,7 +76,7 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: stretch;
-  padding: 10px 0px;
+  //   padding: 10px 0px;
 
   .navbar-list {
     list-style: none;
