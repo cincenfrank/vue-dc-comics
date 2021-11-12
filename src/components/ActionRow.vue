@@ -58,6 +58,7 @@ export default {
   .action-row {
     padding: $padding-y * 5 $padding-x;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     list-style: none;
