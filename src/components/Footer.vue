@@ -136,11 +136,14 @@ footer {
     background-size: 500px;
     background-position-y: center;
     text-align: left;
+    height: 300px;
+    overflow: hidden;
 
     .footer-list {
       display: flex;
       flex-wrap: wrap;
       align-items: flex-start;
+      flex-direction: column;
     }
     .footer-list-item {
       padding: $padding-y $padding-x;
@@ -151,6 +154,8 @@ footer {
       list-style: none;
       color: white;
       text-transform: uppercase;
+      width: 200px;
+      height: 100%;
     }
     .nav-item {
       a {
@@ -186,6 +191,7 @@ footer {
         .social-list {
           list-style: none;
           display: flex;
+
           li {
             padding: $padding-y $padding-x/2;
           }
