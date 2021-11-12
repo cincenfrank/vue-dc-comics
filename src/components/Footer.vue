@@ -26,7 +26,7 @@
               <a :href="social.href"
                 ><img
                   :src="require(`../assets/img/${social.image}`)"
-                  :alt="social.image"
+                  :alt="social.title + ' logo'"
               /></a>
             </li>
           </ul>
