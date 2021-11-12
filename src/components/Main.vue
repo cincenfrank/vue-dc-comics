@@ -1,29 +1,24 @@
 <template>
   <main>
-    <div class="main-block container">Content Goes Here</div>
+    <Jumbotron></Jumbotron>
+    <Shell></Shell>
     <ActionRow></ActionRow>
   </main>
 </template>
 
 <script>
 import ActionRow from "./ActionRow.vue";
+import Jumbotron from "./Jumbotron.vue";
+import Shell from "./Shell.vue";
 export default {
   name: "Main",
-  components: { ActionRow },
+  components: { ActionRow, Jumbotron, Shell },
 };
 </script>
 
 <style lang="scss" scoped>
 @import "../assets/styles/variables.scss";
 main {
-  background-color: black;
-}
-.main-block {
-  font-weight: bold;
-  font-size: 30px;
-  color: white;
-
-  padding: $padding-y * 5 $padding-x;
-  text-align: start;
+  background-color: $dark-bg-color;
 }
 </style>

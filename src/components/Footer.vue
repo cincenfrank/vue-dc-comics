@@ -136,7 +136,7 @@ footer {
     background-size: 500px;
     background-position-y: center;
     text-align: left;
-    height: 300px;
+
     overflow: hidden;
 
     .footer-list {
@@ -155,7 +155,7 @@ footer {
       color: white;
       text-transform: uppercase;
       width: 200px;
-      height: 100%;
+      max-height: 300px;
     }
     .nav-item {
       a {
