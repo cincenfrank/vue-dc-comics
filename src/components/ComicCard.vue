@@ -1,8 +1,8 @@
 <template>
-  <div class="comic-card">
+  <a :href="imageLink" class="comic-card">
     <img :src="imageSrc" :alt="imageAlt" />
     <h5>{{ title }}</h5>
-  </div>
+  </a>
 </template>
 
 <script>
@@ -12,6 +12,9 @@ export default {
     imageSrc: String,
     imageAlt: String,
     title: String,
+    imageLink: {
+      default: "#",
+    },
   },
 };
 </script>
@@ -20,6 +23,7 @@ export default {
 @import "../assets/styles/variables.scss";
 
 .comic-card {
+  display: inline-block;
   img {
     width: 100%;
   }
