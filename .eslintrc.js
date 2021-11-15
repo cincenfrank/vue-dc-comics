@@ -3,7 +3,7 @@ module.exports = {
   env: {
     node: true,
   },
-  ignorePatterns: ["dist/*"],
+  // ignorePatterns: ["dist/*"],
   extends: ["plugin:vue/essential", "eslint:recommended"],
   parserOptions: {
     parser: "babel-eslint",
